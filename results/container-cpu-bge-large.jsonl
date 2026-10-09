@@ -1,0 +1,6 @@
+{"label": "container-cpu-bge-large", "clients": 1, "batch": 1, "requests": 44, "errors": 0, "req_s": 2.9, "texts_s": 2.9, "p50_ms": 317.3, "p95_ms": 634.0, "p99_ms": 659.4}
+{"label": "container-cpu-bge-large", "clients": 8, "batch": 1, "requests": 89, "errors": 0, "req_s": 5.6, "texts_s": 5.6, "p50_ms": 1394.0, "p95_ms": 1797.6, "p99_ms": 1876.1}
+{"label": "container-cpu-bge-large", "clients": 32, "batch": 1, "requests": 108, "errors": 0, "req_s": 5.8, "texts_s": 5.8, "p50_ms": 5089.5, "p95_ms": 6758.7, "p99_ms": 7719.8}
+{"label": "container-cpu-bge-large", "clients": 64, "batch": 1, "requests": 136, "errors": 0, "req_s": 5.6, "texts_s": 5.6, "p50_ms": 10773.9, "p95_ms": 12071.0, "p99_ms": 12649.7}
+{"label": "container-cpu-bge-large", "clients": 1, "batch": 32, "requests": 3, "errors": 0, "req_s": 0.1, "texts_s": 4.8, "p50_ms": 6848.3, "p95_ms": 6961.1, "p99_ms": 6971.2}
+{"label": "container-cpu-bge-large", "clients": 8, "batch": 32, "requests": 8, "errors": 0, "req_s": 0.2, "texts_s": 6.0, "p50_ms": 42408.5, "p95_ms": 42939.2, "p99_ms": 42960.6}

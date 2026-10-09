@@ -1,0 +1,6 @@
+{"label": "container-cpu/bge-small", "files": 93, "chunks": 371, "tokens": 164780, "errors": 0, "seconds": 15.1, "chunks_s": 24.5, "tokens_s": 10881}
+{"label": "container-cpu/bge-large", "files": 93, "chunks": 371, "tokens": 164780, "errors": 0, "seconds": 188.1, "chunks_s": 2.0, "tokens_s": 876}
+{"label": "host-cpu/bge-small", "files": 93, "chunks": 371, "tokens": 164780, "errors": 0, "seconds": 4.5, "chunks_s": 82.7, "tokens_s": 36752}
+{"label": "host-cpu/bge-large", "files": 93, "chunks": 371, "tokens": 164780, "errors": 0, "seconds": 46.2, "chunks_s": 8.0, "tokens_s": 3566}
+{"label": "host-gpu-coreml/bge-small", "files": 93, "chunks": 371, "tokens": 164780, "errors": 0, "seconds": 11.9, "chunks_s": 31.2, "tokens_s": 13842}
+{"label": "host-gpu-coreml/bge-large", "files": 93, "chunks": 371, "tokens": 164780, "errors": 0, "seconds": 30.3, "chunks_s": 12.3, "tokens_s": 5446}

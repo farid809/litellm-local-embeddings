@@ -1,0 +1,6 @@
+{"label": "host-gpu-coreml-bge-large", "clients": 1, "batch": 1, "requests": 174, "errors": 0, "req_s": 11.5, "texts_s": 11.5, "p50_ms": 87.1, "p95_ms": 108.1, "p99_ms": 146.9}
+{"label": "host-gpu-coreml-bge-large", "clients": 8, "batch": 1, "requests": 1051, "errors": 0, "req_s": 69.6, "texts_s": 69.6, "p50_ms": 111.6, "p95_ms": 134.6, "p99_ms": 244.5}
+{"label": "host-gpu-coreml-bge-large", "clients": 32, "batch": 1, "requests": 1239, "errors": 0, "req_s": 81.0, "texts_s": 81.0, "p50_ms": 386.9, "p95_ms": 478.2, "p99_ms": 585.7}
+{"label": "host-gpu-coreml-bge-large", "clients": 64, "batch": 1, "requests": 1003, "errors": 0, "req_s": 64.1, "texts_s": 64.1, "p50_ms": 769.8, "p95_ms": 3004.3, "p99_ms": 5096.4}
+{"label": "host-gpu-coreml-bge-large", "clients": 1, "batch": 32, "requests": 0, "errors": 23883, "req_s": 0.0, "texts_s": 0.0, "p50_ms": 0, "p95_ms": 0, "p99_ms": 0}
+{"label": "host-gpu-coreml-bge-large", "clients": 8, "batch": 32, "requests": 0, "errors": 41420, "req_s": 0.0, "texts_s": 0.0, "p50_ms": 0, "p95_ms": 0, "p99_ms": 0}

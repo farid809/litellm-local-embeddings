@@ -1,0 +1,33 @@
+# Every alias resolves to the in-process model; callers keep the OpenAI-style POST /embeddings contract.
+# ASSUMPTION: the model name the product sends is not confirmed, so the "*" entry accepts any name.
+# Remove "*" once the real name is known, or before adding chat models to this config.
+local_embed: &local_embed
+  litellm_params:
+    model: local-embed/bge-small-en-v1.5   # "local-embed/" = provider below; the rest is only a label
+  model_info:
+    mode: embedding
+
+model_list:
+  - model_name: amazon.titan-embed-text-v1
+    <<: *local_embed
+  - model_name: bedrock/amazon.titan-embed-text-v1
+    <<: *local_embed
+  - model_name: text-embedding-ada-002
+    <<: *local_embed
+  - model_name: text-embedding-3-small
+    <<: *local_embed
+  - model_name: embed-local
+    <<: *local_embed
+  - model_name: "*"
+    litellm_params:
+      model: local-embed/*
+    model_info:
+      mode: embedding
+
+litellm_settings:
+  custom_provider_map:
+    - provider: local-embed
+      custom_handler: local_embed.local_embed   # = <config dir>/local_embed.py, attribute local_embed
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY

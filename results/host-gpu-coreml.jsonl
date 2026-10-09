@@ -1,0 +1,6 @@
+{"label": "host-gpu-coreml", "clients": 1, "batch": 1, "requests": 300, "errors": 0, "req_s": 20.0, "texts_s": 20.0, "p50_ms": 49.2, "p95_ms": 53.0, "p99_ms": 121.4}
+{"label": "host-gpu-coreml", "clients": 8, "batch": 1, "requests": 1664, "errors": 0, "req_s": 110.5, "texts_s": 110.5, "p50_ms": 69.9, "p95_ms": 88.5, "p99_ms": 110.2}
+{"label": "host-gpu-coreml", "clients": 32, "batch": 1, "requests": 1836, "errors": 0, "req_s": 121.0, "texts_s": 121.0, "p50_ms": 206.1, "p95_ms": 678.9, "p99_ms": 1422.7}
+{"label": "host-gpu-coreml", "clients": 64, "batch": 1, "requests": 1416, "errors": 0, "req_s": 90.4, "texts_s": 90.4, "p50_ms": 442.5, "p95_ms": 2236.3, "p99_ms": 3526.3}
+{"label": "host-gpu-coreml", "clients": 1, "batch": 32, "requests": 0, "errors": 23387, "req_s": 0.0, "texts_s": 0.0, "p50_ms": 0, "p95_ms": 0, "p99_ms": 0}
+{"label": "host-gpu-coreml", "clients": 8, "batch": 32, "requests": 0, "errors": 40559, "req_s": 0.0, "texts_s": 0.0, "p50_ms": 0, "p95_ms": 0, "p99_ms": 0}

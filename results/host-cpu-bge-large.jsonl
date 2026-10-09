@@ -1,0 +1,6 @@
+{"label": "host-cpu-bge-large", "clients": 1, "batch": 1, "requests": 238, "errors": 0, "req_s": 15.8, "texts_s": 15.8, "p50_ms": 60.6, "p95_ms": 74.1, "p99_ms": 108.3}
+{"label": "host-cpu-bge-large", "clients": 8, "batch": 1, "requests": 329, "errors": 0, "req_s": 21.6, "texts_s": 21.6, "p50_ms": 371.4, "p95_ms": 411.6, "p99_ms": 578.3}
+{"label": "host-cpu-bge-large", "clients": 32, "batch": 1, "requests": 326, "errors": 0, "req_s": 20.2, "texts_s": 20.2, "p50_ms": 1501.8, "p95_ms": 1992.5, "p99_ms": 2377.8}
+{"label": "host-cpu-bge-large", "clients": 64, "batch": 1, "requests": 359, "errors": 0, "req_s": 20.2, "texts_s": 20.2, "p50_ms": 3110.7, "p95_ms": 3471.7, "p99_ms": 3711.2}
+{"label": "host-cpu-bge-large", "clients": 1, "batch": 32, "requests": 10, "errors": 0, "req_s": 0.6, "texts_s": 19.7, "p50_ms": 1601.3, "p95_ms": 1896.6, "p99_ms": 1979.4}
+{"label": "host-cpu-bge-large", "clients": 8, "batch": 32, "requests": 16, "errors": 0, "req_s": 0.7, "texts_s": 23.8, "p50_ms": 10582.9, "p95_ms": 11314.6, "p99_ms": 11456.2}

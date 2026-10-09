@@ -1,0 +1,6 @@
+{"label": "container-cpu", "clients": 1, "batch": 1, "requests": 226, "errors": 0, "req_s": 15.0, "texts_s": 15.0, "p50_ms": 63.3, "p95_ms": 94.3, "p99_ms": 141.6}
+{"label": "container-cpu", "clients": 8, "batch": 1, "requests": 551, "errors": 0, "req_s": 36.5, "texts_s": 36.5, "p50_ms": 212.2, "p95_ms": 292.8, "p99_ms": 471.9}
+{"label": "container-cpu", "clients": 32, "batch": 1, "requests": 859, "errors": 0, "req_s": 55.8, "texts_s": 55.8, "p50_ms": 559.1, "p95_ms": 717.3, "p99_ms": 828.1}
+{"label": "container-cpu", "clients": 64, "batch": 1, "requests": 811, "errors": 0, "req_s": 51.1, "texts_s": 51.1, "p50_ms": 1195.2, "p95_ms": 1518.3, "p99_ms": 2077.9}
+{"label": "container-cpu", "clients": 1, "batch": 32, "requests": 18, "errors": 0, "req_s": 1.2, "texts_s": 38.0, "p50_ms": 803.4, "p95_ms": 1186.0, "p99_ms": 1239.8}
+{"label": "container-cpu", "clients": 8, "batch": 32, "requests": 35, "errors": 0, "req_s": 2.1, "texts_s": 68.3, "p50_ms": 3681.5, "p95_ms": 4419.2, "p99_ms": 4587.0}

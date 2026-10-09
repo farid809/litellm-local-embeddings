@@ -1,0 +1,31 @@
+# ARCH=amd64 is the x86 cluster target. Upstream's linux/arm64 variant of main-v1.83.14-stable contains x86-64 binaries, so there is no native Apple Silicon build of this tag.
+services:
+  litellm:
+    build:
+      context: .
+      platforms: ["linux/${ARCH:-amd64}"]
+    image: litellm-local-embed:1.83.14-${ARCH:-amd64}
+    platform: linux/${ARCH:-amd64}
+    environment:
+      LITELLM_MASTER_KEY: sk-test-master
+    ports: ["4002:4000"]
+    networks: [default, backend]
+
+  # Cluster-internal caller on a network with no route out (reuses the image for openai+httpx)
+  test-client:
+    image: litellm-local-embed:1.83.14-${ARCH:-amd64}
+    platform: linux/${ARCH:-amd64}
+    entrypoint: ["python", "/client/test_client.py"]
+    environment:
+      LITELLM_EMBEDDING_URL: http://litellm:4000/embeddings
+      LITELLM_PROXY_API_BASE: http://litellm:4000
+      LITELLM_EMBEDDING_PROXY_API_KEY: sk-test-master
+    volumes:
+      - ./test_client.py:/client/test_client.py:ro
+    networks: [backend]
+    depends_on: [litellm]
+    profiles: [client]
+
+networks:
+  backend:
+    internal: true
