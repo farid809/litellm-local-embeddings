@@ -8,3 +8,7 @@
 {"label": "host-cpu/qwen", "files": 93, "chunks": 371, "tokens": 142022, "errors": 0, "seconds": 318.3, "chunks_s": 1.2, "tokens_s": 446}
 {"label": "container-cpu/jina-code", "files": 93, "chunks": 371, "tokens": 159241, "errors": 0, "seconds": 72.9, "chunks_s": 5.1, "tokens_s": 2185}
 {"label": "host-cpu/jina-code", "files": 93, "chunks": 371, "tokens": 159241, "errors": 0, "seconds": 15.6, "chunks_s": 23.8, "tokens_s": 10220}
+{"label": "container-cpu/e5-small", "files": 93, "chunks": 371, "tokens": 165128, "errors": 0, "seconds": 18.5, "chunks_s": 20.1, "tokens_s": 8944}
+{"label": "container-cpu/granite-30m", "files": 93, "chunks": 371, "tokens": 168958, "errors": 0, "seconds": 9.9, "chunks_s": 37.6, "tokens_s": 17133}
+{"label": "host-cpu/e5-small", "files": 93, "chunks": 371, "tokens": 165128, "errors": 0, "seconds": 5.0, "chunks_s": 73.7, "tokens_s": 32801}
+{"label": "host-cpu/granite-30m", "files": 93, "chunks": 371, "tokens": 168958, "errors": 0, "seconds": 2.5, "chunks_s": 150.1, "tokens_s": 68369}

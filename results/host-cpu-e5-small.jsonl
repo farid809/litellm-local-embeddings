@@ -1,0 +1,6 @@
+{"label": "host-cpu-e5-small", "clients": 1, "batch": 1, "requests": 1116, "errors": 0, "req_s": 74.4, "texts_s": 74.4, "p50_ms": 12.7, "p95_ms": 16.1, "p99_ms": 25.3}
+{"label": "host-cpu-e5-small", "clients": 8, "batch": 1, "requests": 3142, "errors": 0, "req_s": 209.1, "texts_s": 209.1, "p50_ms": 37.3, "p95_ms": 50.7, "p99_ms": 63.8}
+{"label": "host-cpu-e5-small", "clients": 32, "batch": 1, "requests": 2651, "errors": 0, "req_s": 174.9, "texts_s": 174.9, "p50_ms": 58.7, "p95_ms": 701.4, "p99_ms": 1140.2}
+{"label": "host-cpu-e5-small", "clients": 64, "batch": 1, "requests": 1793, "errors": 0, "req_s": 116.1, "texts_s": 116.1, "p50_ms": 373.2, "p95_ms": 1559.6, "p99_ms": 2417.3}
+{"label": "host-cpu-e5-small", "clients": 1, "batch": 32, "requests": 66, "errors": 0, "req_s": 4.4, "texts_s": 139.5, "p50_ms": 225.5, "p95_ms": 257.9, "p99_ms": 420.6}
+{"label": "host-cpu-e5-small", "clients": 8, "batch": 32, "requests": 117, "errors": 0, "req_s": 7.5, "texts_s": 240.7, "p50_ms": 1045.4, "p95_ms": 1203.0, "p99_ms": 1363.9}

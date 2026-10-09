@@ -22,6 +22,7 @@ DIM = int(os.environ.get("EMBED_DIM", "1536"))
 BATCH = int(os.environ.get("EMBED_BATCH", "32"))
 MAX_TOKENS = int(os.environ.get("EMBED_MAX_TOKENS", "512"))
 THREADS = int(os.environ.get("EMBED_THREADS", "0"))  # 0 = let ONNX Runtime decide
+PREFIX = os.environ.get("EMBED_PREFIX", "")  # some models expect one, e.g. "passage: " (E5) or "clustering: " (Nomic)
 # ONNX Runtime execution providers in order of preference, e.g. "CoreMLExecutionProvider" on a Mac host
 # or "CUDAExecutionProvider" with onnxruntime-gpu; CPU is always the fallback.
 PROVIDERS = [p for p in os.environ.get("EMBED_PROVIDERS", "").split(",") if p] + ["CPUExecutionProvider"]
@@ -72,7 +73,7 @@ class LocalEmbed(CustomLLM):
         return v
 
     def _embed(self, model, input, model_response, optional_params):
-        texts = self._texts(input)
+        texts = [PREFIX + t for t in self._texts(input)]
         dim = int(optional_params.get("dimensions") or DIM)
         vectors, tokens = [], 0
         for i in range(0, len(texts), BATCH):

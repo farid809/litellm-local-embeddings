@@ -1,0 +1,6 @@
+{"label": "host-cpu-granite-30m", "clients": 1, "batch": 1, "requests": 1837, "errors": 0, "req_s": 122.4, "texts_s": 122.4, "p50_ms": 7.9, "p95_ms": 9.2, "p99_ms": 10.8}
+{"label": "host-cpu-granite-30m", "clients": 8, "batch": 1, "requests": 4548, "errors": 0, "req_s": 302.9, "texts_s": 302.9, "p50_ms": 25.1, "p95_ms": 34.0, "p99_ms": 51.2}
+{"label": "host-cpu-granite-30m", "clients": 32, "batch": 1, "requests": 3437, "errors": 0, "req_s": 227.4, "texts_s": 227.4, "p50_ms": 83.1, "p95_ms": 470.1, "p99_ms": 802.8}
+{"label": "host-cpu-granite-30m", "clients": 64, "batch": 1, "requests": 2159, "errors": 0, "req_s": 140.2, "texts_s": 140.2, "p50_ms": 307.4, "p95_ms": 1377.9, "p99_ms": 1915.9}
+{"label": "host-cpu-granite-30m", "clients": 1, "batch": 32, "requests": 120, "errors": 0, "req_s": 8.0, "texts_s": 254.8, "p50_ms": 125.4, "p95_ms": 137.5, "p99_ms": 256.2}
+{"label": "host-cpu-granite-30m", "clients": 8, "batch": 32, "requests": 225, "errors": 0, "req_s": 14.6, "texts_s": 465.8, "p50_ms": 560.7, "p95_ms": 698.7, "p99_ms": 825.4}
