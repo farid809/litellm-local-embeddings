@@ -1,0 +1,17 @@
+# LiteLLM proxy + gte-Qwen2-1.5B-instruct (native 1536-dim vectors) running inside the proxy process.
+# The model has no ready-made ONNX file, so convert it once on the host first:
+#   python export_onnx.py ./qwen-model
+#   docker build --platform linux/amd64 -f Dockerfile.qwen -t litellm-local-embed:qwen .
+ARG LITELLM_IMAGE=ghcr.io/berriai/litellm:main-v1.83.14-stable
+ARG UV_IMAGE=ghcr.io/astral-sh/uv:latest
+
+FROM ${UV_IMAGE} AS uv
+
+FROM ${LITELLM_IMAGE}
+RUN --mount=from=uv,source=/uv,target=/usr/local/bin/uv \
+    uv pip install --python /app/.venv/bin/python --no-cache onnxruntime
+COPY qwen-model/ /opt/embed-model/
+# LiteLLM loads custom handlers from the config file's directory only
+COPY config.yaml local_embed.py /etc/litellm/
+ENV EMBED_MODEL_DIR=/opt/embed-model EMBED_DIM=1536 EMBED_BATCH=8
+CMD ["--config", "/etc/litellm/config.yaml", "--port", "4000"]

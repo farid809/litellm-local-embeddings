@@ -38,14 +38,23 @@ class LocalEmbed(CustomLLM):
     def __init__(self):
         super().__init__()
         self.tokenizer = Tokenizer.from_file(str(MODEL_DIR / "tokenizer.json"))
-        self.tokenizer.enable_truncation(max_length=MAX_TOKENS)
-        self.tokenizer.enable_padding()
+        self.session = self._session()
+        self.input_names = {i.name for i in self.session.get_inputs()}
+        pooling = self._json("1_Pooling/config.json")
+        self.pooling = "cls" if pooling.get("pooling_mode_cls_token") else "last" if pooling.get("pooling_mode_lasttoken") else "mean"
+        # decoder-style models (e.g. Qwen) expect an end-of-sequence token that tokenizer.json does not add
+        tok = self._json("tokenizer_config.json")
+        self.eos = [self.tokenizer.token_to_id(tok["eos_token"])] if tok.get("add_eos_token") else []
+        self.tokenizer.enable_truncation(max_length=MAX_TOKENS - len(self.eos))
+
+    def _json(self, name):
+        f = MODEL_DIR / name
+        return json.loads(f.read_text()) if f.exists() else {}
+
+    def _session(self):
         opts = ort.SessionOptions()
         opts.intra_op_num_threads = THREADS
-        self.session = ort.InferenceSession(str(MODEL_DIR / "model.onnx"), opts, providers=[(p, PROVIDER_OPTIONS.get(p, {})) for p in PROVIDERS])
-        self.input_names = {i.name for i in self.session.get_inputs()}
-        pooling = MODEL_DIR / "1_Pooling" / "config.json"
-        self.cls_pooling = pooling.exists() and json.loads(pooling.read_text()).get("pooling_mode_cls_token", False)
+        return ort.InferenceSession(str(MODEL_DIR / "model.onnx"), opts, providers=[(p, PROVIDER_OPTIONS.get(p, {})) for p in PROVIDERS])
 
     def _texts(self, input):
         items = [input] if isinstance(input, str) or (input and isinstance(input[0], int)) else list(input)
@@ -67,14 +76,18 @@ class LocalEmbed(CustomLLM):
         dim = int(optional_params.get("dimensions") or DIM)
         vectors, tokens = [], 0
         for i in range(0, len(texts), BATCH):
-            enc = self.tokenizer.encode_batch(texts[i:i + BATCH])
-            mask = np.array([e.attention_mask for e in enc], dtype=np.int64)
-            feed = {"input_ids": np.array([e.ids for e in enc], dtype=np.int64), "attention_mask": mask}
+            rows = [e.ids + self.eos for e in self.tokenizer.encode_batch(texts[i:i + BATCH])]
+            width = max(len(r) for r in rows)
+            ids = np.array([r + [0] * (width - len(r)) for r in rows], dtype=np.int64)
+            mask = np.array([[1] * len(r) + [0] * (width - len(r)) for r in rows], dtype=np.int64)
+            feed = {"input_ids": ids, "attention_mask": mask}
             if "token_type_ids" in self.input_names:
                 feed["token_type_ids"] = np.zeros_like(mask)
             hidden = self.session.run(None, feed)[0]
-            if self.cls_pooling:
+            if self.pooling == "cls":
                 pooled = hidden[:, 0]
+            elif self.pooling == "last":
+                pooled = hidden[np.arange(len(rows)), mask.sum(1) - 1]
             else:
                 m = mask[..., None].astype(hidden.dtype)
                 pooled = (hidden * m).sum(1) / m.sum(1).clip(min=1)

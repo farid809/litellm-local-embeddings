@@ -1,0 +1,6 @@
+{"label": "container-cpu-qwen", "clients": 1, "batch": 1, "requests": 14, "errors": 0, "req_s": 0.9, "texts_s": 0.9, "p50_ms": 970.8, "p95_ms": 1725.2, "p99_ms": 1837.3}
+{"label": "container-cpu-qwen", "clients": 8, "batch": 1, "requests": 24, "errors": 0, "req_s": 1.4, "texts_s": 1.4, "p50_ms": 5559.8, "p95_ms": 6446.6, "p99_ms": 6508.8}
+{"label": "container-cpu-qwen", "clients": 32, "batch": 1, "requests": 42, "errors": 0, "req_s": 1.3, "texts_s": 1.3, "p50_ms": 18210.6, "p95_ms": 27670.7, "p99_ms": 28408.7}
+{"label": "container-cpu-qwen", "clients": 64, "batch": 1, "requests": 71, "errors": 0, "req_s": 1.4, "texts_s": 1.4, "p50_ms": 32108.4, "p95_ms": 47565.0, "p99_ms": 50047.5}
+{"label": "container-cpu-qwen", "clients": 1, "batch": 32, "requests": 1, "errors": 0, "req_s": 0.0, "texts_s": 1.1, "p50_ms": 0, "p95_ms": 0, "p99_ms": 0}
+{"label": "container-cpu-qwen", "clients": 8, "batch": 32, "requests": 0, "errors": 8, "req_s": 0.0, "texts_s": 0.0, "p50_ms": 0, "p95_ms": 0, "p99_ms": 0}

@@ -1,0 +1,6 @@
+{"label": "container-cpu-jina-code", "clients": 1, "batch": 1, "requests": 86, "errors": 0, "req_s": 5.7, "texts_s": 5.7, "p50_ms": 154.8, "p95_ms": 289.8, "p99_ms": 557.7}
+{"label": "container-cpu-jina-code", "clients": 8, "batch": 1, "requests": 207, "errors": 0, "req_s": 13.4, "texts_s": 13.4, "p50_ms": 581.9, "p95_ms": 727.4, "p99_ms": 922.6}
+{"label": "container-cpu-jina-code", "clients": 32, "batch": 1, "requests": 238, "errors": 0, "req_s": 14.2, "texts_s": 14.2, "p50_ms": 2103.9, "p95_ms": 2937.1, "p99_ms": 3210.2}
+{"label": "container-cpu-jina-code", "clients": 64, "batch": 1, "requests": 278, "errors": 0, "req_s": 14.9, "texts_s": 14.9, "p50_ms": 4152.1, "p95_ms": 4747.8, "p99_ms": 4912.3}
+{"label": "container-cpu-jina-code", "clients": 1, "batch": 32, "requests": 5, "errors": 0, "req_s": 0.3, "texts_s": 9.5, "p50_ms": 3299.8, "p95_ms": 4564.6, "p99_ms": 4740.0}
+{"label": "container-cpu-jina-code", "clients": 8, "batch": 32, "requests": 8, "errors": 0, "req_s": 0.4, "texts_s": 14.3, "p50_ms": 17613.7, "p95_ms": 17899.8, "p99_ms": 17916.6}

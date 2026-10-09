@@ -3,7 +3,7 @@
 # Remove "*" once the real name is known, or before adding chat models to this config.
 local_embed: &local_embed
   litellm_params:
-    model: local-embed/bge-small-en-v1.5   # "local-embed/" = provider below; the rest is only a label
+    model: local-embed/local   # "local-embed/" = provider below; the rest is only a label
   model_info:
     mode: embedding
 

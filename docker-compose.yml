@@ -11,6 +11,19 @@ services:
     ports: ["4002:4000"]
     networks: [default, backend]
 
+  # Option 2: Qwen, native 1536-dim. Run `python export_onnx.py ./qwen-model` first.
+  litellm-qwen:
+    build:
+      context: .
+      dockerfile: Dockerfile.qwen
+      platforms: ["linux/${ARCH:-amd64}"]
+    image: litellm-local-embed:1.83.14-${ARCH:-amd64}-qwen
+    platform: linux/${ARCH:-amd64}
+    environment:
+      LITELLM_MASTER_KEY: sk-test-master
+    ports: ["4003:4000"]
+    profiles: [qwen]
+
   # Cluster-internal caller on a network with no route out (reuses the image for openai+httpx)
   test-client:
     image: litellm-local-embed:1.83.14-${ARCH:-amd64}

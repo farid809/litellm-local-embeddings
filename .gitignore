@@ -1,3 +1,5 @@
 evidence/
 model/
 .DS_Store
+__pycache__/
+qwen-model/

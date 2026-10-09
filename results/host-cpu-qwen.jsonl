@@ -1,0 +1,6 @@
+{"label": "host-cpu-qwen", "clients": 1, "batch": 1, "requests": 76, "errors": 0, "req_s": 5.0, "texts_s": 5.0, "p50_ms": 191.8, "p95_ms": 241.8, "p99_ms": 306.1}
+{"label": "host-cpu-qwen", "clients": 8, "batch": 1, "requests": 75, "errors": 0, "req_s": 4.7, "texts_s": 4.7, "p50_ms": 1616.7, "p95_ms": 2227.2, "p99_ms": 2273.9}
+{"label": "host-cpu-qwen", "clients": 32, "batch": 1, "requests": 75, "errors": 0, "req_s": 3.4, "texts_s": 3.4, "p50_ms": 7976.5, "p95_ms": 13205.7, "p99_ms": 13533.8}
+{"label": "host-cpu-qwen", "clients": 64, "batch": 1, "requests": 106, "errors": 0, "req_s": 2.1, "texts_s": 2.1, "p50_ms": 18320.3, "p95_ms": 37090.7, "p99_ms": 37597.3}
+{"label": "host-cpu-qwen", "clients": 1, "batch": 32, "requests": 1, "errors": 0, "req_s": 0.1, "texts_s": 1.9, "p50_ms": 0, "p95_ms": 0, "p99_ms": 0}
+{"label": "host-cpu-qwen", "clients": 8, "batch": 32, "requests": 8, "errors": 0, "req_s": 0.1, "texts_s": 3.5, "p50_ms": 72671.1, "p95_ms": 73358.1, "p99_ms": 73431.4}
