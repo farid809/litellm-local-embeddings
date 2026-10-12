@@ -6,8 +6,12 @@ import struct
 import time
 
 import httpx
-import litellm  # noqa: F401  (points tiktoken at the encoding bundled in the image)
 from openai import OpenAI
+
+try:  # in the LiteLLM image this points tiktoken at the encoding bundled there
+    import litellm  # noqa: F401
+except ImportError:
+    pass
 
 URL = os.environ["LITELLM_EMBEDDING_URL"]
 BASE = os.environ["LITELLM_PROXY_API_BASE"]

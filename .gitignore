@@ -1,5 +1,7 @@
 evidence/
 model/
+qwen-model/
 .DS_Store
 __pycache__/
-qwen-model/
+tests/usecases/vectors/
+tests/usecases/corpora/

@@ -1,0 +1,6 @@
+{"label": "host-gpu-mps-qwen3-4b", "clients": 1, "batch": 1, "requests": 275, "errors": 0, "req_s": 18.3, "texts_s": 18.3, "p50_ms": 54.3, "p95_ms": 58.4, "p99_ms": 67.2}
+{"label": "host-gpu-mps-qwen3-4b", "clients": 8, "batch": 1, "requests": 409, "errors": 0, "req_s": 26.9, "texts_s": 26.9, "p50_ms": 297.0, "p95_ms": 310.4, "p99_ms": 319.5}
+{"label": "host-gpu-mps-qwen3-4b", "clients": 32, "batch": 1, "requests": 441, "errors": 0, "req_s": 27.3, "texts_s": 27.3, "p50_ms": 1163.6, "p95_ms": 1202.1, "p99_ms": 1207.7}
+{"label": "host-gpu-mps-qwen3-4b", "clients": 64, "batch": 1, "requests": 473, "errors": 0, "req_s": 27.6, "texts_s": 27.6, "p50_ms": 2310.5, "p95_ms": 2368.5, "p99_ms": 2446.8}
+{"label": "host-gpu-mps-qwen3-4b", "clients": 1, "batch": 32, "requests": 14, "errors": 0, "req_s": 0.9, "texts_s": 28.3, "p50_ms": 1133.9, "p95_ms": 1155.5, "p99_ms": 1157.2}
+{"label": "host-gpu-mps-qwen3-4b", "clients": 8, "batch": 32, "requests": 21, "errors": 0, "req_s": 0.9, "texts_s": 28.7, "p50_ms": 8899.5, "p95_ms": 8934.8, "p99_ms": 8937.1}

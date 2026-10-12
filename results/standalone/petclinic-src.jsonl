@@ -1,0 +1,3 @@
+{"label": "host-gpu-mps-qwen3-4b", "files": 93, "chunks": 371, "tokens": 142022, "errors": 0, "seconds": 41.1, "chunks_s": 9.0, "tokens_s": 3452}
+{"label": "container-cpu-qwen3-4b", "files": 93, "chunks": 371, "tokens": 142022, "errors": 0, "seconds": 1391.3, "chunks_s": 0.3, "tokens_s": 102}
+{"label": "host-cpu-qwen3-4b", "files": 93, "chunks": 371, "tokens": 142022, "errors": 0, "seconds": 806.5, "chunks_s": 0.5, "tokens_s": 176}

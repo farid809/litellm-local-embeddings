@@ -1,0 +1,30 @@
+# Builds for the machine's own architecture (no emulation). The image holds the model, about 8 GB.
+services:
+  embed:
+    build:
+      context: .
+    image: embed-server:qwen3-4b
+    environment:
+      LITELLM_MASTER_KEY: sk-test-master   # same variable as the proxy option; EMBED_API_KEY also works
+    ports: ["4004:4000"]
+    networks: [default, backend]
+
+  # Cluster-internal caller on a network with no route out
+  test-client:
+    build:
+      context: ../tests
+      dockerfile: Dockerfile.client
+    image: embed-test-client
+    environment:
+      LITELLM_EMBEDDING_URL: http://embed:4000/embeddings
+      LITELLM_PROXY_API_BASE: http://embed:4000
+      LITELLM_EMBEDDING_PROXY_API_KEY: sk-test-master
+    volumes:
+      - ../tests/test_client.py:/client/test_client.py:ro
+    networks: [backend]
+    depends_on: [embed]
+    profiles: [client]
+
+networks:
+  backend:
+    internal: true

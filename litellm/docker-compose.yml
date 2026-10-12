@@ -34,7 +34,7 @@ services:
       LITELLM_PROXY_API_BASE: http://litellm:4000
       LITELLM_EMBEDDING_PROXY_API_KEY: sk-test-master
     volumes:
-      - ./test_client.py:/client/test_client.py:ro
+      - ../tests/test_client.py:/client/test_client.py:ro
     networks: [backend]
     depends_on: [litellm]
     profiles: [client]
